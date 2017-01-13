@@ -1,9 +1,12 @@
-require("server.js");
+var path = require('path');
+
+module.exports = fucntion(app) {
 
 app.get("/", function(req, res){
-    res.sendFile(path.join(root, "home.html" ));
-});
+    res.sendFile(path.join(root + '/../public/home.html'));
+})
 
 app.get("/survey", function(req, res){
-    res.sendFile(path.join(root, "survey.html"));
-});
+    res.sendFile(path.join(root + '/../public/survey.html'));
+})
+};

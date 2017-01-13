@@ -1,7 +1,6 @@
-require("server.js");
-require("api-routes.js");
-
-var friends = [{
-    name: "",
-    scores: ""
+var users = [{
+    name: "Jeff",
+    scores: [1,2,3,4,5,6,7,8,9,10]
 }];
+
+module.exports = users;
