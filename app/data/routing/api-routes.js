@@ -15,6 +15,7 @@ app.post("/api/friends", function(req, res) {
  var scoreDifference = 0;
  var arrayDifference = [];
 
+//for loop for matching new users
    for (var i = 0; i < friends.length -1; i++){
 
        for(var h = 0; h < friends[i].scores.lenght; h++){
