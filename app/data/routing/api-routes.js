@@ -1,14 +1,16 @@
-var friends = require('../data/friends.js');
+var friends = require('./app/data/friends.js');
 
 module.exports = function(app){
 
+//app to get users
 app.get("/api/friends", function(req, res) {
-    res.send(friends);
+    res.json(friends);
 });
 
+//create new user
 app.post("/api/friends", function(req, res) {
- var newfriend = req.body;
- friends.push(newfriend);
+ var newUser = req.body;
+ friends.push(newUser);
 
  var scoreDifference = 0;
  var arrayDifference = [];
@@ -16,7 +18,7 @@ app.post("/api/friends", function(req, res) {
    for (var i = 0; i < friends.length -1; i++){
 
        for(var h = 0; h < friends[i].scores.lenght; h++){
-           scoreDifference += Math.abs(friends[i].scores[h] - newfriend.scores[h]);
+           scoreDifference += Math.abs(friends[i].scores[h] - newUser.scores[h]);
        }
 
        arrayDifference.push(scoreDifference);
@@ -24,7 +26,7 @@ app.post("/api/friends", function(req, res) {
    }
 
 var match = friends[arrayDifference.indexOf(Math.min.apply(null, arrayDifference))];
-res.send(match);
+res.sendFile(match);
 });
 }
 
