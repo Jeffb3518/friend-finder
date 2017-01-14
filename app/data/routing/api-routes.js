@@ -16,7 +16,7 @@ app.post("/api/friends", function(req, res) {
  var arrayDifference = [];
 
 //for loop for matching new users
-   for (var i = 0; i < friends.length -1; i++){
+   for (var i = 0; i < friends.length[i]; i++){
 
        for(var h = 0; h < friends[i].scores.lenght; h++){
            scoreDifference += Math.abs(friends[i].scores[h] - newUser.scores[h]);
