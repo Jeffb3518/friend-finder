@@ -13,7 +13,6 @@ app.post("/api/friends", function(req, res) {
  friends.push(newUser);
 
  var scoreDifference = 0;
- var arrayDifference = [];
 
 //for loop for matching new users
    for (var i = 0; i < friends.length[i]; i++){
@@ -22,11 +21,11 @@ app.post("/api/friends", function(req, res) {
            scoreDifference += Math.abs(friends[i].scores[h] - newUser.scores[h]);
        }
 
-       arrayDifference.push(scoreDifference);
+       newUser.push(scoreDifference);
        scoreDifference = 0;
    }
 
-var match = friends[arrayDifference.indexOf(Math.min.apply(null, arrayDifference))];
+var match = friends[scoreDifference.indexOf(Math.min.apply(null, scores))];
 res.sendFile(match);
 });
 }
